@@ -1,0 +1,22 @@
+1. Course Schedule:
+	1) Test (chapter 6)  -- Leslie
+	2) Memory management (chapter 3)  -- Ocean
+	3) Time & Date (chapter 2)  -- Dennis
+	4) Utility (chapter 4) -- Wayne
+	5) Log (added) -- Freda
+	6) String (chapter 5)-- Joshua
+	7) Container & data structure 1 (sections 7.1~7.5) -- Jordon
+	8) Container & data structure 2 (sections 7.6~7.10) --  Eric
+	9) Algorithm & math (chapter 8/9, rational is optional) -- Holley
+	10) OS (chapter 10 exclude filesystem)  - Alisa
+	11) Filesystem (section 10.4) -- Justin
+	12) Function & callback (chapter 11) -- Fitch
+	13) Thread (section 12.1) -- David
+	14) Asio (section 12.2) -- Hadden
+	15) Interprocess (added) -- Peter
+
+2. ppt & minutes is put under doc/
+3. code is managed with git. Leslie will help to prepare it
+4. boost binaries can get from \\10.204.16.2\Home\ETP-AD1004 Multi-platform development
+5. You can build all code according to src/readme.txt
+6. All code should be built without any errors/warnings under at two platforms
