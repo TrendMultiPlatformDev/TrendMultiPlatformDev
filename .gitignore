@@ -1,9 +1,0 @@
-cross_platform/3rd_party/
-cross_platform/output/
-ipch
-Debug
-Release
-*.suo
-*.sdf
-*.opensdf
-*.vcxproj.user
