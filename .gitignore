@@ -1,1 +1,10 @@
- 
+cross_platform/3rd_party/boost
+cross_platform/output
+Debug
+Release
+*.user
+*.sdf
+*.opensdf
+*.o
+*.d
+ut
