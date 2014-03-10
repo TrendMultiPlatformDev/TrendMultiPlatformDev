@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_test", "01_test", "{331D
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14_asio", "14_asio\14_asio.vcxproj", "{35755CF1-945E-47BD-B85B-46658B514B03}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_memory", "02_memory\02_memory.vcxproj", "{5A1677EB-9499-45C8-B375-DFF0F167B5FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,12 +35,16 @@ Global
 		{35755CF1-945E-47BD-B85B-46658B514B03}.Debug|Win32.Build.0 = Debug|Win32
 		{35755CF1-945E-47BD-B85B-46658B514B03}.Release|Win32.ActiveCfg = Release|Win32
 		{35755CF1-945E-47BD-B85B-46658B514B03}.Release|Win32.Build.0 = Release|Win32
+		{5A1677EB-9499-45C8-B375-DFF0F167B5FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A1677EB-9499-45C8-B375-DFF0F167B5FA}.Debug|Win32.Build.0 = Debug|Win32
+		{5A1677EB-9499-45C8-B375-DFF0F167B5FA}.Release|Win32.ActiveCfg = Release|Win32
+		{5A1677EB-9499-45C8-B375-DFF0F167B5FA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B8368D2F-8548-465D-B71A-B51D3F193AFF} = {331DDE82-2C5E-40AC-8100-C3842C788417}
 		{583E385D-56E8-4690-BEBE-3A6ABA7BBB47} = {331DDE82-2C5E-40AC-8100-C3842C788417}
+		{B8368D2F-8548-465D-B71A-B51D3F193AFF} = {331DDE82-2C5E-40AC-8100-C3842C788417}
 	EndGlobalSection
 EndGlobal
