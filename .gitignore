@@ -1,0 +1,13 @@
+cross_platform/3rd_party/boost
+cross_platform/output
+Debug
+Release
+ipch
+*.user
+*.sdf
+*.suo
+*.opensdf
+*.o
+*.d
+core*
+ut
