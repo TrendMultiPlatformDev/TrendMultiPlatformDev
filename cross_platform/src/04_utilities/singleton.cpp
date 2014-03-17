@@ -9,21 +9,6 @@ using namespace std;
 using namespace boost::posix_time;
 using namespace trend;
 
-SomeLogdPtr SomeLogd::s_pLogdInstance = NULL;
-
-SomeLogdPtr SomeLogd::GetInstance()
-{
-	if(s_pLogdInstance == NULL)
-		s_pLogdInstance.reset(new SomeLogd());
-
-	return s_pLogdInstance;
-}
-
-void SomeLogd::ResetInstance()
-{
-	s_pLogdInstance.reset();
-}
-
 void SomeLogd::Log(const char *str)
 {
 	boost::mutex::scoped_lock lock(m_mtxLog);

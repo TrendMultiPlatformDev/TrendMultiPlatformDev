@@ -4,6 +4,7 @@
 #include <string>
 
 #include <boost/noncopyable.hpp>
+#include <boost/serialization/singleton.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread/mutex.hpp>
 #include <boost/utility.hpp>
@@ -12,26 +13,15 @@ namespace trend
 {
 	class SomeLogd;
 
-	typedef boost::shared_ptr<SomeLogd> SomeLogdPtr;
-
-	class SomeLogd: public boost::noncopyable
+	class SomeLogd: public boost::serialization::singleton<SomeLogd>
 	{
 	private:
-		SomeLogd() {}
-
 		boost::mutex m_mtxLog;
-		
 		std::string m_strLogBuffer;
-
-		static SomeLogdPtr s_pLogdInstance;
 
 	public:
 		void Log(const char *str);
-
 		std::string GetLog();
-
-		static SomeLogdPtr GetInstance();
-		static void ResetInstance();
 		
 	};
 
