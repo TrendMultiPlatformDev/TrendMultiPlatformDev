@@ -1,7 +1,10 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <vector>
+#include <map>
 
+#include <boost/assign.hpp>
 #include <boost/optional.hpp>
 #include <boost/typeof/typeof.hpp>
 
@@ -12,8 +15,9 @@
 
 using namespace std;
 using namespace trend;
+using namespace boost::assign;
 
-BOOST_AUTO_TEST_CASE(utilities) 
+BOOST_AUTO_TEST_CASE(utilities1) 
 {
 	SomeLogd& logd1 = SomeLogd::get_mutable_instance();
 	logd1.Log("log from logd1");
@@ -31,7 +35,7 @@ BOOST_AUTO_TEST_CASE(utilities)
 	BOOST_ASSERT(strLog1.find("log from logd2") != string::npos);
 }
 
-BOOST_AUTO_TEST_CASE(optional)
+BOOST_AUTO_TEST_CASE(utilities2)
 {
 	boost::optional<int> opInt1;
 	boost::optional<int> opInt2(boost::none);
@@ -47,7 +51,39 @@ BOOST_AUTO_TEST_CASE(optional)
 	BOOST_ASSERT(opInt2.get() == 512);
 }
 
-BOOST_AUTO_TEST_CASE(assign)
+BOOST_AUTO_TEST_CASE(utilities3)
 {
-	
+	vector<int> vi;
+	vi += 0,1,2,3,4,5;
+
+	BOOST_ASSERT(vi.size() == 6);
+	BOOST_ASSERT(vi[3] == 3);
+	BOOST_ASSERT(vi[5] == 5);
+
+	map<int, string> mapIntStr;
+	BOOST_AUTO(pair1, make_pair(0, "Hello"));
+	BOOST_AUTO(pair2, make_pair(99, "World"));
+
+	mapIntStr += pair1, pair2;
+
+	BOOST_ASSERT(mapIntStr[0] == "Hello");
+	BOOST_ASSERT(mapIntStr[99] == "World");
+
+	map<string, string> mapStrStr1 = map_list_of
+		("test", "²âÊÔ")
+		("haha", "¹þ¹þ");
+
+	BOOST_ASSERT(mapStrStr1["test"] == "²âÊÔ");
+	BOOST_ASSERT(mapStrStr1["haha"] == "¹þ¹þ");
+
+	map<string, string> mapStrStr2 = map_list_of
+		("test2", "²âÊÔ2")
+		("haha2", "¹þ¹þ2");
+
+	boost::swap(mapStrStr1, mapStrStr2);
+
+	BOOST_ASSERT(mapStrStr1["test2"] == "²âÊÔ2");
+	BOOST_ASSERT(mapStrStr1["haha2"] == "¹þ¹þ2");
+	BOOST_ASSERT(mapStrStr2["test"] == "²âÊÔ");
+	BOOST_ASSERT(mapStrStr2["haha"] == "¹þ¹þ");
 }
