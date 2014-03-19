@@ -1,10 +1,12 @@
 #include <cstdlib>
+#include <exception>
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 
 #include <boost/assign.hpp>
+#include <boost/exception/all.hpp>
 #include <boost/optional.hpp>
 #include <boost/typeof/typeof.hpp>
 
@@ -108,5 +110,37 @@ BOOST_AUTO_TEST_CASE(operators)
 	p5.print();*/
 	BOOST_ASSERT(p4 == Point(1, 1, 1));
 	BOOST_ASSERT(p5 == Point(3, 5, 7));
+}
+
+struct my_exception:
+	virtual exception,
+	virtual boost::exception
+{};
+
+typedef boost::error_info<struct tag_err_no, int> err_no;
+typedef boost::error_info<struct tag_err_str, string> err_str;
+
+BOOST_AUTO_TEST_CASE(exceptions)
+{
+	try
+	{
+		try
+		{
+			throw my_exception() << err_no(10);
+		}
+		catch(my_exception& e)
+		{
+			e << err_str("more info");
+			throw;
+		}
+	}
+	catch(my_exception& e)
+	{
+		int errorno = *boost::get_error_info<err_no>(e);
+		string errorstr = *boost::get_error_info<err_str>(e);
+		//cout << errorno << ": " << errorstr << endl;
+		BOOST_ASSERT(errorno == 10);
+		BOOST_ASSERT(errorstr == "more info");
+	}
 }
 
