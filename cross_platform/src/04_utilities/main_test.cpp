@@ -9,6 +9,9 @@
 #include <boost/exception/all.hpp>
 #include <boost/optional.hpp>
 #include <boost/typeof/typeof.hpp>
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
 
 #define BOOST_TEST_MODULE test_utilities
 #include <boost/test/unit_test.hpp>
@@ -143,4 +146,31 @@ BOOST_AUTO_TEST_CASE(exceptions)
 		BOOST_ASSERT(errorstr == "more info");
 	}
 }
+
+BOOST_AUTO_TEST_CASE(uuids)
+{
+	boost::uuids::uuid u0 = boost::uuids::nil_generator()();
+	boost::uuids::uuid u1 = boost::uuids::nil_uuid();
+
+	//cout << u0 << endl;
+
+	BOOST_ASSERT(u0.is_nil());
+	BOOST_ASSERT(u1.is_nil());
+
+	boost::uuids::uuid www_xxx_com = 
+		boost::uuids::string_generator()("{0123456789abcdef0123456789abcdef}");
+	boost::uuids::name_generator namegen(www_xxx_com);
+
+	boost::uuids::uuid u2 = namegen("sunjw");
+	
+	//cout << u2 << endl;
+	BOOST_ASSERT(!u2.is_nil());
+	
+	boost::uuids::random_generator rgen;
+	boost::uuids::uuid u3 = rgen();
+	//cout << u3 << endl;
+	BOOST_ASSERT(!u3.is_nil());
+}
+
+
 
