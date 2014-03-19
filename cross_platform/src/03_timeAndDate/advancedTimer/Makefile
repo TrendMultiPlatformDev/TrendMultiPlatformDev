@@ -1,4 +1,4 @@
-ROOT_DIR := ../..
+ROOT_DIR := ../../..
 include $(ROOT_DIR)/src/build_settings/linux/build.conf
 
 SRC_LIST := $(wildcard *.cpp)
