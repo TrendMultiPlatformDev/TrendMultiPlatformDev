@@ -6,6 +6,7 @@
 #include <map>
 
 #include <boost/assign.hpp>
+#include <boost/config/suffix.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/optional.hpp>
 #include <boost/typeof/typeof.hpp>
@@ -172,5 +173,9 @@ BOOST_AUTO_TEST_CASE(uuids)
 	BOOST_ASSERT(!u3.is_nil());
 }
 
-
+BOOST_AUTO_TEST_CASE(configs)
+{
+	string strLine = BOOST_STRINGIZE(__LINE__);
+	BOOST_ASSERT(strLine == "178");
+}
 
