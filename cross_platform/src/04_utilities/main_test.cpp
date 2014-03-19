@@ -170,10 +170,10 @@ BOOST_AUTO_TEST_CASE(uuids)
 	//cout << u2 << endl;
 	BOOST_ASSERT(!u2.is_nil());
 	
-	boost::uuids::random_generator rgen;
+	/*boost::uuids::random_generator rgen;
 	boost::uuids::uuid u3 = rgen();
 	//cout << u3 << endl;
-	BOOST_ASSERT(!u3.is_nil());
+	BOOST_ASSERT(!u3.is_nil());*/
 }
 
 BOOST_AUTO_TEST_CASE(configs)
