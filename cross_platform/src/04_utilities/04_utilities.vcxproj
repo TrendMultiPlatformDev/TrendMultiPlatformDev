@@ -86,6 +86,7 @@
     <ClCompile Include="singleton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="point.h" />
     <ClInclude Include="singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

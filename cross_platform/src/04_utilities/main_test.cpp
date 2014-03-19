@@ -12,6 +12,7 @@
 #include <boost/test/unit_test.hpp>
 
 #include "singleton.h"
+#include "point.h"
 
 using namespace std;
 using namespace trend;
@@ -87,3 +88,25 @@ BOOST_AUTO_TEST_CASE(utilities3)
 	BOOST_ASSERT(mapStrStr2["test"] == "²âÊÔ");
 	BOOST_ASSERT(mapStrStr2["haha"] == "¹þ¹þ");
 }
+
+BOOST_AUTO_TEST_CASE(utilities4)
+{
+	Point p1(1, 2, 3);
+	Point p2(1, 2, 3);
+	Point p3(2, 3, 4);
+
+	BOOST_ASSERT(p1 == p2);
+	BOOST_ASSERT(p1 != p3);
+	BOOST_ASSERT(p1 <= p2);
+	BOOST_ASSERT(p1 < p3);
+	BOOST_ASSERT(p3 > p2);
+
+	Point p4 = p3 - p2;
+	Point p5 = p1 + p3;
+
+	/*p4.print();
+	p5.print();*/
+	BOOST_ASSERT(p4 == Point(1, 1, 1));
+	BOOST_ASSERT(p5 == Point(3, 5, 7));
+}
+
