@@ -7,9 +7,12 @@
 
 #include <boost/assign.hpp>
 #include <boost/config/suffix.hpp>
+#include <boost/current_function.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/optional.hpp>
 #include <boost/typeof/typeof.hpp>
+#include <boost/utility.hpp>
+#include <boost/utility/binary.hpp>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
@@ -176,6 +179,21 @@ BOOST_AUTO_TEST_CASE(uuids)
 BOOST_AUTO_TEST_CASE(configs)
 {
 	string strLine = BOOST_STRINGIZE(__LINE__);
-	BOOST_ASSERT(strLine == "178");
+	BOOST_ASSERT(strLine == "181");
+}
+
+string test_function()
+{
+	return BOOST_CURRENT_FUNCTION;
+}
+
+BOOST_AUTO_TEST_CASE(utilities_more)
+{
+	unsigned int ui0 = BOOST_BINARY_U(1001);
+	BOOST_ASSERT(ui0 == 9);
+
+	string strFuncName = test_function();
+	//cout << strFuncName << endl;
+	BOOST_ASSERT(strFuncName.find("test_function") != string::npos);
 }
 
