@@ -18,7 +18,7 @@ using namespace std;
 using namespace trend;
 using namespace boost::assign;
 
-BOOST_AUTO_TEST_CASE(utilities1) 
+BOOST_AUTO_TEST_CASE(utilities) 
 {
 	SomeLogd& logd1 = SomeLogd::get_mutable_instance();
 	logd1.Log("log from logd1");
@@ -36,7 +36,7 @@ BOOST_AUTO_TEST_CASE(utilities1)
 	BOOST_ASSERT(strLog1.find("log from logd2") != string::npos);
 }
 
-BOOST_AUTO_TEST_CASE(utilities2)
+BOOST_AUTO_TEST_CASE(optional)
 {
 	boost::optional<int> opInt1;
 	boost::optional<int> opInt2(boost::none);
@@ -52,7 +52,7 @@ BOOST_AUTO_TEST_CASE(utilities2)
 	BOOST_ASSERT(opInt2.get() == 512);
 }
 
-BOOST_AUTO_TEST_CASE(utilities3)
+BOOST_AUTO_TEST_CASE(assign)
 {
 	vector<int> vi;
 	vi += 0,1,2,3,4,5;
@@ -89,7 +89,7 @@ BOOST_AUTO_TEST_CASE(utilities3)
 	BOOST_ASSERT(mapStrStr2["haha"] == "¹þ¹þ");
 }
 
-BOOST_AUTO_TEST_CASE(utilities4)
+BOOST_AUTO_TEST_CASE(operators)
 {
 	Point p1(1, 2, 3);
 	Point p2(1, 2, 3);
