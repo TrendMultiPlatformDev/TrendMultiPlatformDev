@@ -12,3 +12,4 @@ ipch
 *.filters
 core*
 ut
+*.DS_Store
