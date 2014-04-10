@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "progress_display", "03_time
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "timer", "03_timeAndDate\timer\timer.vcxproj", "{3A7832DE-090B-4D09-9CF4-4134FA6D0859}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06_string", "06_string\06_string.vcxproj", "{E34CEAC1-BC81-4AE3-B608-804F3882DAE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -73,6 +75,10 @@ Global
 		{3A7832DE-090B-4D09-9CF4-4134FA6D0859}.Debug|Win32.Build.0 = Debug|Win32
 		{3A7832DE-090B-4D09-9CF4-4134FA6D0859}.Release|Win32.ActiveCfg = Release|Win32
 		{3A7832DE-090B-4D09-9CF4-4134FA6D0859}.Release|Win32.Build.0 = Release|Win32
+		{E34CEAC1-BC81-4AE3-B608-804F3882DAE3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E34CEAC1-BC81-4AE3-B608-804F3882DAE3}.Debug|Win32.Build.0 = Debug|Win32
+		{E34CEAC1-BC81-4AE3-B608-804F3882DAE3}.Release|Win32.ActiveCfg = Release|Win32
+		{E34CEAC1-BC81-4AE3-B608-804F3882DAE3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
