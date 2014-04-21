@@ -1,0 +1,4 @@
+000001: <normal>	A regular message
+000002: <warning>	Something bad is going on but I can handle it
+000003: <critical>	Everything crumbles, shoot me now!
+000004: <normal>	[IMPORTANT_MESSAGE] An important message

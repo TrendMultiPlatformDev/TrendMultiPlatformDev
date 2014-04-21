@@ -9,5 +9,7 @@ ipch
 *.opensdf
 *.o
 *.d
+*.filters
 core*
 ut
+*.DS_Store

@@ -1,0 +1,7 @@
+01: <normal>	(named_scope_logging) Hello from the function named_scope_logging!
+02: <normal>	() [My tag value] Here goes the tagged record
+03: <normal>	() [00:00:00.000005] Starting to time nested functions
+04: <normal>	() [00:00:00.000091] A regular message
+05: <warning>	() [00:00:00.000127] Something bad is going on but I can handle it
+06: <critical>	() [00:00:00.000154] Everything crumbles, shoot me now!
+07: <normal>	() [00:00:00.000187] Stopping to time nested functions
