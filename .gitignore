@@ -16,3 +16,7 @@ ut
 cross_platform/src/05_Log/backend_sink/logs/*.xml
 cross_platform/src/05_Log/logwrapper/logs/*.log
 cross_platform/src/05_Log/boost_log/*.log
+cross_platform/src/05_Log/attribute_test/*.log
+cross_platform/src/05_Log/formatting/*.log
+cross_platform/src/03_timeAndDate/progress_display/test.txt
+
