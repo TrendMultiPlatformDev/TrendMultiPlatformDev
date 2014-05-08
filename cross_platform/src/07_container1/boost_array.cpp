@@ -9,7 +9,7 @@ BOOST_AUTO_TEST_CASE(boostarray)
 {
 	cout << "Case:boostarray" << endl;
 
-	array<int, 10> ar;
+	boost::array<int, 10> ar;
 	/*
 	for (int i=0;i<10;i++)
 	{
