@@ -1,6 +1,0 @@
-[1]2014-04-11 00:16:56: <trace> A trace severity message
-[2]2014-04-11 00:16:56: <debug> A debug severity message
-[3]2014-04-11 00:16:56: <info> An informational severity message
-[4]2014-04-11 00:16:56: <warning> A warning severity message
-[5]2014-04-11 00:16:56: <error> An error severity message
-[6]2014-04-11 00:16:56: <fatal> A fatal severity message
