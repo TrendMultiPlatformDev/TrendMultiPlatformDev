@@ -16,6 +16,7 @@
 #include <boost/format.hpp>
 #include <boost/tokenizer.hpp>
 #include <boost/xpressive/xpressive_dynamic.hpp>
+#include <boost/foreach.hpp>
 
 #define BOOST_TEST_MODULE test_utilities
 #include <boost/test/unit_test.hpp>
@@ -55,22 +56,22 @@ BOOST_AUTO_TEST_CASE( string_algo_test ) {
 }
 
 BOOST_AUTO_TEST_CASE( tokenizer_test ) {
-	string str1("Life is a struggle :-)");
+	string str1 ("Life is a struggle :-)");
 	tokenizer<> tok1(str1);
-	for(auto x: tok1) {	cout << " [" << x << "] ";}
+	BOOST_FOREACH(auto x, tok1) {	cout << " [" << x << "] ";}
 	cout << endl;
 
-	string str2("100,0,0,81abcff,AndroidOS_DroidRooter.ZA,400");
+	string str2 ("100,0,0,81abcff,AndroidOS_DroidRooter.ZA,400");
 	escaped_list_separator<char> sep2;
 	tokenizer<escaped_list_separator<char>> tok2(str2, sep2);
-	for(auto x: tok2) {	cout << " [" << x << "] ";}
+	BOOST_FOREACH(auto x, tok2) {	cout << " [" << x << "] ";}
 	cout << endl;
 
-	string str3 = "3.14159265358979";
+	string str3 ("3.14159265358979");
 	int offsets [] = {2,3,4};
 	offset_separator sep3(offsets, offsets +3);
 	tokenizer<offset_separator> tok3(str3, sep3);
-	for(auto x: tok3) {	cout << " [" << x << "] ";}
+	BOOST_FOREACH(auto x, tok3) {	cout << " [" << x << "] ";}
 	cout << endl;
 }
 
