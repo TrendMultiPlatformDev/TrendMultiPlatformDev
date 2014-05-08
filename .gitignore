@@ -8,8 +8,11 @@ ipch
 *.suo
 *.opensdf
 *.o
-*.d
+*.d*
 *.filters
 core*
 ut
 *.DS_Store
+cross_platform/src/05_Log/backend_sink/logs/*.xml
+cross_platform/src/05_Log/logwrapper/logs/*.log
+cross_platform/src/05_Log/boost_log/*.log
