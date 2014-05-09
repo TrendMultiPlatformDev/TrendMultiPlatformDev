@@ -10,7 +10,7 @@ using namespace std;
 template<typename T>
 void print(circular_buffer<T>& cb)
 {
-	circular_buffer<T>::iterator it = cb.begin();
+	typename circular_buffer<T>::iterator it = cb.begin();
 	for(it;it!=cb.end();++it)
 	{
 		cout << *it << ",";
@@ -40,14 +40,14 @@ BOOST_AUTO_TEST_CASE(circularBuffer)
 
 	//compare operation
 	using namespace boost::assign;
-	circular_buffer<int> cb1((list_of(1),2,3));
-	circular_buffer<int> cb2((list_of(3),4,5));
+	circular_buffer<int> cb1 = (list_of(1),2,3);
+	circular_buffer<int> cb2 = (list_of(3),4,5);
 	circular_buffer<int> cb3 = cb1;
 
 	BOOST_ASSERT(cb1 < cb2);
 	BOOST_ASSERT(cb1 == cb3);
 
-	circular_buffer<int> cbInt((list_of(1),2,3));
+	circular_buffer<int> cbInt = (list_of(1),2,3);
 	print(cbInt);//1,2,3
 	
 	cbInt.push_back(4);
