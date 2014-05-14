@@ -7,10 +7,14 @@
 #include <stdlib.h>
 
 using namespace boost;
+using namespace std;
 
 template<typename T> struct any_print;
+template<typename T> struct any_print1;
+//template<typename T>
+
 template<typename T>
-struct any_print<T>{
+struct any_print{
 	void operator()(any &a)
 	try{
 		cout << *any_cast<T>(&a) << endl;
@@ -20,13 +24,13 @@ struct any_print<T>{
 };
 
 template<typename T>
-struct any_print<shared_ptr<T>>{
+struct any_print<boost::shared_ptr<T> >{
 	void operator()(any &a)
-	try{
-		cout << **any_cast<shared_ptr<T>>(&a) << endl;
-	}catch(bad_any_cast &){
-		cout << "print error" << endl;
-	}
+		try{
+			cout << **any_cast<boost::shared_ptr<T> >(&a) << endl;
+		}catch(bad_any_cast &){
+			cout << "print error" << endl;
+		}
 };
 //test suite s_smart_prt
 BOOST_AUTO_TEST_SUITE(s_any);
@@ -37,14 +41,16 @@ BOOST_AUTO_TEST_CASE(t_any_base)
 	char* str = "boost";
 
 	a = str;
-	any_print<char*>()(a);
+
+    any_print<char*>()(a);
 
 	a = 10;
 	any_print<int>()(a);
 
-	shared_ptr<std::string> ps = make_shared<std::string>("hello");
+
+	boost::shared_ptr<std::string> ps = boost::make_shared<std::string>("hello");
 	a = ps;
-	any_print<shared_ptr<std::string>>()(a);
+	any_print<boost::shared_ptr<std::string>>()(a);
 }
 
 // end the test suite

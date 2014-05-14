@@ -18,7 +18,7 @@ BOOST_AUTO_TEST_CASE(t_variant_base)
 {
 	var_t v;
 
-	BOOST_CHECK_EQUAL(v.type(), typeid(int));
+	
 	BOOST_CHECK_EQUAL(v.which(), 0);
 
 	v = "boost";

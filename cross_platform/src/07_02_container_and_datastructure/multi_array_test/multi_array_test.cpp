@@ -33,12 +33,12 @@ BOOST_AUTO_TEST_CASE(t_ma_base)
 
 	//cout << ma[2][3][4];
 	//Î»ÖÃË÷ÒýÐòÁÐ
-	array<size_t, 3> idx = {0, 1, 2};
+	boost::array<size_t, 3> idx = {0, 1, 2};
 	//ma(idx) = 10;
 	cout << ma(idx);
 
 	BOOST_ASSERT(ma.shape()[0] == 2);
-	array<size_t, 3> arr = {4, 3, 2};
+	boost::array<size_t, 3> arr = {4, 3, 2};
 	ma.reshape(arr);
 	BOOST_ASSERT(ma.shape()[0] == 4);
 

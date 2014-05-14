@@ -14,7 +14,9 @@
     <ClCompile Include="property_tree_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="conf.xml" />
+    <Xml Include="conf.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="conf2.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
