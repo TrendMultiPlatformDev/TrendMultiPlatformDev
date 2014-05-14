@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conf>
+  <gui>1</gui>
+  <theme>matrix</theme>
+  <urls>
+    <url>http://www.url2.com</url>
+    <url>http://www.url3.com</url>
+    <url>http://www.url4.com</url>
+  </urls>
+  <clock_style>24</clock_style>
+</conf>
